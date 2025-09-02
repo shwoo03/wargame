@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+
+{% block content %}
+    <div id='vuln'></div>
+    <script>var x=new URLSearchParams(location.search); document.getElementById('vuln').innerHTML = x.get('param');</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <p class="important"><a href="/vuln?param=<script>alert(1)</script>">vuln(xss) page</a></p>
+  <p class="important"><a href="/memo?memo=hello">memo</a></p>
+  <p class="important"><a href="/flag">flag</a></p>
+{% endblock %}
