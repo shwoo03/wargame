@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <form method="POST">
+    http://127.0.0.1:8000/vuln?param=<input type="text" name="param"/><br/>
+    <input type="submit"/><br/>
+  </form>
+{% endblock %}
