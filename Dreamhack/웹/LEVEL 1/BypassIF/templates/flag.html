@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Flag{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+<h1>hello admin</h1>
+<form action="/flag" method="POST">
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <br/><input type="text" class="form-control" placeholder="ls" name="cmd_input" required>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<br/><br/>
+{% if txt %}
+  <pre>{{ txt }}</pre>
+{% endif %}
+{% endblock %}

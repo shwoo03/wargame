@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+<h1>hello dream</h1>
+<form action="/flag" method="POST">
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <br/><input type="text" class="form-control" placeholder="your key" name="key" pattern="[A-Za-z0-9\s]{2,35}" required>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<br/><br/>
+{% if txt %}
+  <pre>{{ txt }}</pre>
+{% endif %}
+{% endblock %}

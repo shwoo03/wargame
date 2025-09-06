@@ -1,0 +1,21 @@
+services:
+    nodejs:
+        build:
+          context: ./app/
+        image: nodejs-app
+        restart: always
+        ports:
+          - 3000:3000
+        environment:
+          - COUCHDB_USER=admin
+          - COUCHDB_PASSWORD=password
+          - FLAG=DH{**FLAG**}
+        depends_on:
+          - couchdb
+
+    couchdb:
+        image: couchdb
+        restart: always
+        environment:
+          - COUCHDB_USER=admin
+          - COUCHDB_PASSWORD=password

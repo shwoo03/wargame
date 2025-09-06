@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  proxy:
+    image: haproxy:alpine
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./deploy/proxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    command: haproxy -f /usr/local/etc/haproxy/haproxy.cfg
+    depends_on:
+      - app
+  app:
+    build:
+      context: ./deploy/app

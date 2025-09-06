@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+<h1>hello guest</h1>
+<br/><br/>
+{% if txt %}
+  <pre>{{ txt }}</pre>
+{% endif %}
+{% endblock %}
