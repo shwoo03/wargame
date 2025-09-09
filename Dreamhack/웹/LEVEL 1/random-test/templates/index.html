@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/non-responsive.css') }}">
+
+    <title>Random Test</title>
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Random Test</a>
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <form action="/" method="post">
+        <p class="bold_txt">사물함 번호 <br/><input type="text" class="input_box" name="locker_num"/></p>
+        <p class="bold_txt">자물쇠 비밀번호 <br/><input type="text" class="input_box" name="password"/></p>
+        <input type="submit" class="input_submit"/><br/>
+      </form>
+      <br/><br/>
+      {% if result %}
+      <pre>{{ result }}</pre>
+      {% else %}
+      <pre>Enter the value</pre>
+      {% endif %}
+    </div> 
+
+    <style type="text/css">
+      .bold_txt { 
+        color: #595959;
+        font-size: 13px;
+        font-weight: 600; 
+        margin-bottom: 20px;
+      }
+      .input_box {
+        margin-top: 8px;
+      }
+      .input_submit {
+        border: 1px solid #595959;
+        border-radius: 5px;
+        color: #595959;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 10px;
+      }
+    </style>
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script> 
+  </body>
+</html>
