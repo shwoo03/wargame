@@ -1,0 +1,3 @@
+<Limit DELETE>
+        Require all denied
+</Limit>
